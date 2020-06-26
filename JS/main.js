@@ -37,6 +37,7 @@ const productsAdded = [];
 
 const productsList = [...document.querySelectorAll(".productsList li")];
 
+const insideGrow = document.querySelector(".Smoothie .inside .insideUP");
 plusProduct.forEach((plusProductOne) =>
   plusProductOne.addEventListener("click", function () {
     if (productsAdded.length <= 4) {
@@ -47,7 +48,24 @@ plusProduct.forEach((plusProductOne) =>
       productsList[2].textContent = productsAdded[2];
       productsList[1].textContent = productsAdded[3];
       productsList[0].textContent = productsAdded[4];
-      // console.log(i);
+      productsAdded[0]
+        ? (insideGrow.style.top = "80%")
+        : (insideGrow.style.top = "100%");
+      if (productsAdded[1]) {
+        insideGrow.style.top = "60%";
+      }
+      if (productsAdded[2]) {
+        insideGrow.style.top = "40%";
+      }
+      if (productsAdded[3]) {
+        insideGrow.style.top = "20%";
+      }
+      if (productsAdded[3]) {
+        insideGrow.style.top = "20%";
+      }
+      if (productsAdded[4]) {
+        insideGrow.style.top = "0%";
+      }
     }
   })
 );
@@ -62,7 +80,25 @@ minusProduct.forEach((minusProductOne) =>
       productsList[2].textContent = productsAdded[2];
       productsList[1].textContent = productsAdded[3];
       productsList[0].textContent = productsAdded[4];
-      console.log(b);
+      productsAdded[0]
+        ? (insideGrow.style.top = "80%")
+        : (insideGrow.style.top = "100%");
+
+      if (productsAdded[1]) {
+        insideGrow.style.top = "60%";
+      }
+      if (productsAdded[2]) {
+        insideGrow.style.top = "40%";
+      }
+      if (productsAdded[3]) {
+        insideGrow.style.top = "20%";
+      }
+      if (productsAdded[3]) {
+        insideGrow.style.top = "20%";
+      }
+      if (productsAdded[4]) {
+        insideGrow.style.top = "0%";
+      }
     }
     // console.log(productsAdded);
   })

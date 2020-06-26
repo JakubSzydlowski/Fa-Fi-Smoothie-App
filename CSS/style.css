@@ -489,31 +489,45 @@ div.minus {
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 1;
+  overflow: hidden;
+  left: -5%;
 }
 .inside {
   position: absolute;
-  background-color: rgba(255, 217, 0, 0.747);
-  top: 63%;
-  left: 125px;
-  width: 166px;
-  height: 100px;
+  background-color: rgba(233, 221, 156, 0.747);
+  top: 40%;
+  left: 91px;
+  width: 169px;
+  height: 260px;
+  /* border: 2px red solid; */
+  overflow: hidden;
 }
-
-@media (max-width: 1360px) {
-  .cap {
-    min-width: 350px;
-    left: -10%;
-  }
-}
-@media (max-width: 1580px) {
-  .cap {
-    min-width: 350px;
-    left: -6%;
-  }
+@media (max-width: 1620px) {
   .inside {
-    left: 86px;
-    width: 168px;
+    left: 96px;
   }
+}
+@media (max-width: 1460px) {
+  .inside {
+    left: 100px;
+  }
+}
+.insideUP {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 138, 36);
+  background: linear-gradient(
+    63deg,
+    rgba(255, 138, 36, 1) 20%,
+    rgba(251, 255, 76, 1) 32%,
+    rgba(113, 195, 39, 1) 47%,
+    rgba(179, 28, 87, 1) 77%,
+    rgba(228, 119, 162, 1) 89%
+  );
+  transition: 0.5s;
 }
 
 .howMuchProducts li {
@@ -645,14 +659,12 @@ button.AddToBasket:hover {
 }
 @media (max-width: 1600px) {
   button.AddToBasket {
-    font-size: 18px;
-    width: 90px;
-    left: 42%;
+    left: 45%;
   }
 }
 @media (max-width: 1400px) {
   button.AddToBasket {
-    left: 46%;
+    left: 49%;
   }
 }
 div.cover {

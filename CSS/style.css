@@ -504,12 +504,12 @@ div.minus {
 }
 @media (max-width: 1620px) {
   .inside {
-    left: 96px;
+    left: 101px;
   }
 }
 @media (max-width: 1460px) {
   .inside {
-    left: 100px;
+    left: 105px;
   }
 }
 .insideUP {

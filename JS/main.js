@@ -38,33 +38,42 @@ const productsAdded = [];
 const productsList = [...document.querySelectorAll(".productsList li")];
 
 const insideGrow = document.querySelector(".Smoothie .inside .insideUP");
+const tablicaMeserka = [];
 plusProduct.forEach((plusProductOne) =>
   plusProductOne.addEventListener("click", function () {
     if (productsAdded.length <= 4) {
-      productsAdded.push(this.textContent);
-      // let i = productsAdded.indexOf(this.textContent);
-      productsList[4].textContent = productsAdded[0];
-      productsList[3].textContent = productsAdded[1];
-      productsList[2].textContent = productsAdded[2];
-      productsList[1].textContent = productsAdded[3];
-      productsList[0].textContent = productsAdded[4];
-      productsAdded[0]
-        ? (insideGrow.style.top = "80%")
-        : (insideGrow.style.top = "100%");
-      if (productsAdded[1]) {
-        insideGrow.style.top = "60%";
+      if (this.textContent.length >= 20) {
+        const checkedProduct = this.textContent;
+        const tablicaMeserka = checkedProduct.split(",");
+        for (i = 0; i <= 4; i++) {
+          productsAdded.push(tablicaMeserka[i]);
+        }
+      } else {
+        productsAdded.push(this.textContent);
       }
-      if (productsAdded[2]) {
-        insideGrow.style.top = "40%";
-      }
-      if (productsAdded[3]) {
-        insideGrow.style.top = "20%";
-      }
-      if (productsAdded[3]) {
-        insideGrow.style.top = "20%";
-      }
-      if (productsAdded[4]) {
-        insideGrow.style.top = "0%";
+
+      for (a = 0, b = 4; a <= 4, b >= 0; a++, b--) {
+        productsList[b].textContent = productsAdded[a];
+        productsList[b].textContent = productsAdded[a];
+        productsList[b].textContent = productsAdded[a];
+        productsList[b].textContent = productsAdded[a];
+        productsList[b].textContent = productsAdded[a];
+
+        productsAdded[0]
+          ? (insideGrow.style.top = "80%")
+          : (insideGrow.style.top = "100%");
+        if (productsAdded[1]) {
+          insideGrow.style.top = "60%";
+        }
+        if (productsAdded[2]) {
+          insideGrow.style.top = "40%";
+        }
+        if (productsAdded[3]) {
+          insideGrow.style.top = "20%";
+        }
+        if (productsAdded[4]) {
+          insideGrow.style.top = "0%";
+        }
       }
     }
   })
@@ -73,13 +82,28 @@ plusProduct.forEach((plusProductOne) =>
 minusProduct.forEach((minusProductOne) =>
   minusProductOne.addEventListener("click", function () {
     let b = productsAdded.indexOf(this.textContent);
-    if (b >= 0) {
-      productsAdded.splice(b, 1);
-      productsList[4].textContent = productsAdded[0];
-      productsList[3].textContent = productsAdded[1];
-      productsList[2].textContent = productsAdded[2];
-      productsList[1].textContent = productsAdded[3];
-      productsList[0].textContent = productsAdded[4];
+    if (b >= 0 || this.textContent.length >= 20) {
+      if (this.textContent.length >= 20) {
+        const checkedProduct = this.textContent;
+        const tablicaMeserka = checkedProduct.split(",");
+        for (x = 0; x <= 4; x++) {
+          if (tablicaMeserka[x] == productsAdded[x]) {
+            for (i = 0; i <= 4; i++) {
+              productsAdded.splice(tablicaMeserka, 5);
+            }
+          }
+        }
+      } else {
+        productsAdded.splice(b, 1);
+      }
+      for (a = 0, b = 4; a <= 4, b >= 0; a++, b--) {
+        productsList[4].textContent = productsAdded[0];
+        productsList[3].textContent = productsAdded[1];
+        productsList[2].textContent = productsAdded[2];
+        productsList[1].textContent = productsAdded[3];
+        productsList[0].textContent = productsAdded[4];
+      }
+
       productsAdded[0]
         ? (insideGrow.style.top = "80%")
         : (insideGrow.style.top = "100%");

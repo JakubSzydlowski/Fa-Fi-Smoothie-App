@@ -39,6 +39,71 @@ const productsList = [...document.querySelectorAll(".productsList li")];
 
 const insideGrow = document.querySelector(".Smoothie .inside .insideUP");
 const tablicaMeserka = [];
+
+// Dodawanie gotowych smoothie do koszyka
+const addToBasketBtn = document.querySelector(".yourSmothie .AddToBasket");
+const smoothieList = [
+  ...document.querySelectorAll(".smoothieList .smoothieListOrder ul li p"),
+];
+const IconDeleteSmoothie = document.querySelector(
+  ".smoothieList .smoothieListOrder ul li span"
+);
+const smoothieListProductsList = [
+  ...document.querySelectorAll(".smoothieList .smoothieListOrder ul>p"),
+];
+let N = 0;
+
+addToBasketBtn.addEventListener("click", function () {
+  if (productsAdded.length == 5) {
+    N++;
+    if (N <= 6) {
+      smoothieList[N - 1].textContent = "Smoothie " + N;
+
+      smoothieListProductsList[N - 1].textContent =
+        productsList[0].textContent +
+        ", " +
+        productsList[1].textContent +
+        ", " +
+        productsList[2].textContent +
+        ", " +
+        productsList[3].textContent +
+        ", " +
+        productsList[4].textContent;
+
+      productsAdded.splice(0, 5);
+      console.log(productsList);
+      console.log(productsAdded);
+      for (a = 0, b = 4; a <= 4, b >= 0; a++, b--) {
+        productsList[b].textContent = productsAdded[a];
+
+        productsAdded[0]
+          ? (insideGrow.style.top = "80%")
+          : (insideGrow.style.top = "100%");
+        if (productsAdded[1]) {
+          insideGrow.style.top = "60%";
+        }
+        if (productsAdded[2]) {
+          insideGrow.style.top = "40%";
+        }
+        if (productsAdded[3]) {
+          insideGrow.style.top = "20%";
+        }
+        if (productsAdded[4]) {
+          insideGrow.style.top = "0%";
+        }
+      }
+    } else {
+      alert(
+        "Z racji dostaw realizowanych przez drony, maksymalna ilość Smoothies w zamówieniu to 6 sztuk. Aby zamówić więcej niż 6 sztuk dokonaj zamówienia ponowanie."
+      );
+    }
+  } else {
+    alert("Musisz wybrąc 5 składników!");
+  }
+});
+
+// Dodawanie gotowych smoothie do koszyka ENd
+
 plusProduct.forEach((plusProductOne) =>
   plusProductOne.addEventListener("click", function () {
     if (productsAdded.length <= 4) {
@@ -53,10 +118,6 @@ plusProduct.forEach((plusProductOne) =>
       }
 
       for (a = 0, b = 4; a <= 4, b >= 0; a++, b--) {
-        productsList[b].textContent = productsAdded[a];
-        productsList[b].textContent = productsAdded[a];
-        productsList[b].textContent = productsAdded[a];
-        productsList[b].textContent = productsAdded[a];
         productsList[b].textContent = productsAdded[a];
 
         productsAdded[0]
@@ -97,13 +158,8 @@ minusProduct.forEach((minusProductOne) =>
         productsAdded.splice(b, 1);
       }
       for (a = 0, b = 4; a <= 4, b >= 0; a++, b--) {
-        productsList[4].textContent = productsAdded[0];
-        productsList[3].textContent = productsAdded[1];
-        productsList[2].textContent = productsAdded[2];
-        productsList[1].textContent = productsAdded[3];
-        productsList[0].textContent = productsAdded[4];
+        productsList[b].textContent = productsAdded[a];
       }
-
       productsAdded[0]
         ? (insideGrow.style.top = "80%")
         : (insideGrow.style.top = "100%");

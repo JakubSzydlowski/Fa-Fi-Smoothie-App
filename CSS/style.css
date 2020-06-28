@@ -573,14 +573,45 @@ div.minus {
   background-color: rgba(222, 248, 196, 0.884);
   position: absolute;
   right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.smoothieListOrder li {
+  list-style: none;
+  font-size: 30px;
+  background-color: rgb(231, 223, 223);
+  width: 100%;
+  flex-basis: 10%;
+  position: relative;
+}
+.smoothieListOrder li p {
+  position: absolute;
+  width: 85%;
+  font-size: 30px;
+}
+.smoothieListOrder li span {
+  position: absolute;
+  right: 0%;
+  width: 15%;
+  top: 0;
+  background-image: url(/graphics/minus.png);
+  background-color: #f3e66f;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.smoothieListOrder ul p {
+  background-color: rgba(224, 230, 231, 0.027);
+  font-size: 14px;
+  position: relative;
+  width: 100%;
+  flex-basis: 10%;
 }
 .smoothieList h3 {
   font-size: 35px;
   padding: 3%;
-}
-.smoothieListOrder li {
-  list-style: none;
-  font-size: 32px;
+  background-color: rgb(240, 255, 220);
 }
 @media (max-width: 1720px) {
   .smoothieList {
@@ -652,6 +683,7 @@ button.AddToBasket {
   outline: 0;
   cursor: pointer;
   background-color: rgb(250, 252, 138);
+  z-index: 2;
 }
 button.AddToBasket:hover {
   border-radius: 30% 0% 30% 30%;

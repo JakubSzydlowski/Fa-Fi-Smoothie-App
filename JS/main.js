@@ -51,12 +51,55 @@ const IconDeleteSmoothie = document.querySelector(
 const smoothieListProductsList = [
   ...document.querySelectorAll(".smoothieList .smoothieListOrder ul>p"),
 ];
+const deleteAddedSmoothie = [...document.querySelectorAll('.smoothieListOrder ul li span')];
 let N = 0;
+let P;
+let PN = -1;
+
+deleteAddedSmoothie.forEach(deleteAddedSmoothieOne => deleteAddedSmoothieOne.addEventListener('click', function () {
+  P = this.dataset.option;
+  PN = Number(P);
+  smoothieListProductsList[PN - 1].textContent = "";
+  smoothieList[PN - 1].textContent = "";
+  if (N >= 0) {
+    if (smoothieList[0].textContent == "") {
+      N = 1
+    } else if (smoothieList[1].textContent == "") {
+      N = 2
+    } else if (smoothieList[2].textContent == "") {
+      N = 3
+    } else if (smoothieList[3].textContent == "") {
+      N = 4
+    } else if (smoothieList[4].textContent == "") {
+      N = 5
+    } else if (smoothieList[5].textContent == "") {
+      N = 6
+    }
+
+  }
+
+}))
+
 
 addToBasketBtn.addEventListener("click", function () {
+
   if (productsAdded.length == 5) {
-    N++;
-    if (N <= 6) {
+
+    if (N <= 5) {
+      if (smoothieList[0].textContent == "") {
+        N = 1
+      } else if (smoothieList[1].textContent == "") {
+        N = 2
+      } else if (smoothieList[2].textContent == "") {
+        N = 3
+      } else if (smoothieList[3].textContent == "") {
+        N = 4
+      } else if (smoothieList[4].textContent == "") {
+        N = 5
+      } else if (smoothieList[5].textContent == "") {
+        N = 6
+      }
+
       smoothieList[N - 1].textContent = "Smoothie " + N;
 
       smoothieListProductsList[N - 1].textContent =
@@ -71,14 +114,14 @@ addToBasketBtn.addEventListener("click", function () {
         productsList[4].textContent;
 
       productsAdded.splice(0, 5);
-      console.log(productsList);
-      console.log(productsAdded);
+
+
       for (a = 0, b = 4; a <= 4, b >= 0; a++, b--) {
         productsList[b].textContent = productsAdded[a];
 
-        productsAdded[0]
-          ? (insideGrow.style.top = "80%")
-          : (insideGrow.style.top = "100%");
+        productsAdded[0] ?
+          (insideGrow.style.top = "80%") :
+          (insideGrow.style.top = "100%");
         if (productsAdded[1]) {
           insideGrow.style.top = "60%";
         }
@@ -98,7 +141,7 @@ addToBasketBtn.addEventListener("click", function () {
       );
     }
   } else {
-    alert("Musisz wybrąc 5 składników!");
+    alert("Musisz wybrać 5 składników!");
   }
 });
 
@@ -107,22 +150,24 @@ addToBasketBtn.addEventListener("click", function () {
 plusProduct.forEach((plusProductOne) =>
   plusProductOne.addEventListener("click", function () {
     if (productsAdded.length <= 4) {
-      if (this.textContent.length >= 20) {
+      if (this.textContent.length >= 20 && productsAdded.length == 0) {
         const checkedProduct = this.textContent;
         const tablicaMeserka = checkedProduct.split(",");
         for (i = 0; i <= 4; i++) {
           productsAdded.push(tablicaMeserka[i]);
         }
-      } else {
+      } else if (this.textContent.length <= 20) {
         productsAdded.push(this.textContent);
+      } else {
+        alert('Aby dodać polecone smoothie- usuń obecnie dodane skłaniki!')
       }
 
       for (a = 0, b = 4; a <= 4, b >= 0; a++, b--) {
         productsList[b].textContent = productsAdded[a];
 
-        productsAdded[0]
-          ? (insideGrow.style.top = "80%")
-          : (insideGrow.style.top = "100%");
+        productsAdded[0] ?
+          (insideGrow.style.top = "80%") :
+          (insideGrow.style.top = "100%");
         if (productsAdded[1]) {
           insideGrow.style.top = "60%";
         }
@@ -136,6 +181,8 @@ plusProduct.forEach((plusProductOne) =>
           insideGrow.style.top = "0%";
         }
       }
+    } else {
+      alert('Dodałeś już maksymalną ilość składników na jedno Smoothie!')
     }
   })
 );
@@ -160,9 +207,9 @@ minusProduct.forEach((minusProductOne) =>
       for (a = 0, b = 4; a <= 4, b >= 0; a++, b--) {
         productsList[b].textContent = productsAdded[a];
       }
-      productsAdded[0]
-        ? (insideGrow.style.top = "80%")
-        : (insideGrow.style.top = "100%");
+      productsAdded[0] ?
+        (insideGrow.style.top = "80%") :
+        (insideGrow.style.top = "100%");
 
       if (productsAdded[1]) {
         insideGrow.style.top = "60%";

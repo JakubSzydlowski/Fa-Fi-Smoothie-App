@@ -39,23 +39,7 @@ const productsList = [...document.querySelectorAll(".productsList li")];
 
 const insideGrow = document.querySelector(".Smoothie .inside .insideUP");
 const tablicaMeserka = [];
-// Pay and order przycisk
-const PayAndOrderBtn = document.querySelector(".OrderAndPay");
-const CoverPayAndOrderBtn = document.querySelector(".OrderAndPay div");
 
-PayAndOrderBtn.addEventListener("mouseover", function () {
-  CoverPayAndOrderBtn.style.left = "0%";
-  CoverPayAndOrderBtn.style.bottom = "0%";
-  CoverPayAndOrderBtn.style.transform = "rotate(0deg)";
-  CoverPayAndOrderBtn.style.backgroundColor = "rgba(236, 236, 235, 0.999)";
-});
-PayAndOrderBtn.addEventListener("mouseout", function () {
-  CoverPayAndOrderBtn.style.left = "60%";
-  CoverPayAndOrderBtn.style.bottom = "160%";
-  CoverPayAndOrderBtn.style.transform = "rotate(90deg)";
-  CoverPayAndOrderBtn.style.backgroundColor = "rgba(78, 78, 76, 0.275)";
-});
-// Pay and order przycisk END
 // Dodawanie gotowych smoothie do koszyka
 const addToBasketBtn = document.querySelector(".yourSmothie .AddToBasket");
 const smoothieList = [
@@ -83,8 +67,8 @@ deleteAddedSmoothie.forEach((deleteAddedSmoothieOne) =>
   deleteAddedSmoothieOne.addEventListener("click", function () {
     P = this.dataset.option;
     PN = Number(P);
-    smoothieListSlide[PN - 1].style.left = "-100%";
-    smoothieListProductsList[PN - 1].style.left = "-100%";
+    smoothieListSlide[PN - 1].style.left = "-110%";
+    smoothieListProductsList[PN - 1].style.left = "-110%";
     smoothieListProductsList[PN - 1].textContent = "";
     smoothieList[PN - 1].textContent = "";
 
@@ -269,7 +253,70 @@ minusProduct.forEach((minusProductOne) =>
 // logika dodawanie produktów do cap END
 // przypisanie wartości tablicy ze skladnikami do kolumny oraz zwiekszanie inside w cap END
 // otwieranie i zamykanie okienka z wyborem produktów
+
+// Pay and order przycisk
+const PayAndOrderBtn = document.querySelector(".OrderAndPay");
+const CoverPayAndOrderBtn = document.querySelector(".OrderAndPay div");
+const payAndDeliverySection = document.querySelector(".payAndDelivery");
+const totalAmound = document.querySelector(".yourTotalAmound");
+let priceTotal;
+const payingBtn = document.querySelector(".paying");
+const startDelivery = document.querySelector(".droneStart");
+const coverLastInfo = document.querySelector(".coverLastInfo");
+
+payingBtn.addEventListener("click", function () {
+  payingBtn.textContent = "Zapłacone";
+  payingBtn.style.backgroundColor = "rgb(188, 255, 149)";
+});
+startDelivery.addEventListener("click", function () {
+  if (payingBtn.textContent == "Zapłacone") {
+    coverLastInfo.style.left = "50%";
+    startDelivery.textContent = "Wystartowane!";
+    startDelivery.style.backgroundColor = "rgb(188, 255, 149)";
+  } else {
+    alert("Zapłać!");
+  }
+});
+PayAndOrderBtn.addEventListener("click", function () {
+  if (price.textContent > 0) {
+    E = price.textContent;
+    priceTotal = Number(E);
+    priceTotal2 = priceTotal + 8;
+    console.log(priceTotal);
+    totalAmound.textContent =
+      "Całkowity koszt zamówienia: " + priceTotal2 + "zł";
+    payAndDeliverySection.style.bottom = "0";
+  } else {
+    alert("Minimalna ilość zamówienia to 1 smoothie!");
+  }
+});
+
+PayAndOrderBtn.addEventListener("mouseover", function () {
+  CoverPayAndOrderBtn.style.left = "0%";
+  CoverPayAndOrderBtn.style.bottom = "0%";
+  CoverPayAndOrderBtn.style.transform = "rotate(0deg)";
+  CoverPayAndOrderBtn.style.backgroundColor = "rgba(236, 236, 235, 0.999)";
+});
+PayAndOrderBtn.addEventListener("mouseout", function () {
+  CoverPayAndOrderBtn.style.left = "60%";
+  CoverPayAndOrderBtn.style.bottom = "160%";
+  CoverPayAndOrderBtn.style.transform = "rotate(90deg)";
+  CoverPayAndOrderBtn.style.backgroundColor = "rgba(78, 78, 76, 0.275)";
+});
+// Pay and order przycisk END
+
+const LiFruits = [...document.querySelectorAll(".UlFruits li")];
+const LiVege = [...document.querySelectorAll(".UlVege li")];
+const LiAddnitional = [...document.querySelectorAll(".UlAddnitional li")];
+const LiChecked = [...document.querySelectorAll(".UlChecked li")];
+
 checked.addEventListener("click", function () {
+  LiChecked.forEach((LiCheckedOne) => (LiCheckedOne.style.fontSize = "32px"));
+  LiAddnitional.forEach(
+    (LiAddnitionalOne) => (LiAddnitionalOne.style.fontSize = "0px")
+  );
+  LiVege.forEach((LiVegeOne) => (LiVegeOne.style.fontSize = "0px"));
+  LiFruits.forEach((LiFruitsOne) => (LiFruitsOne.style.fontSize = "0px"));
   checkedProducts.classList.add("CheckedUlShow");
   vegeProducts.classList.remove("VegeUlShow");
   fruitsProducts.classList.remove("FruitUlShow");
@@ -278,6 +325,12 @@ checked.addEventListener("click", function () {
 });
 
 addnitional.addEventListener("click", function () {
+  LiAddnitional.forEach(
+    (LiAddnitionalOne) => (LiAddnitionalOne.style.fontSize = "32px")
+  );
+  LiChecked.forEach((LiCheckedOne) => (LiCheckedOne.style.fontSize = "0px"));
+  LiVege.forEach((LiVegeOne) => (LiVegeOne.style.fontSize = "0px"));
+  LiFruits.forEach((LiFruitsOne) => (LiFruitsOne.style.fontSize = "0px"));
   addnitionalProducts.classList.add("AdnitionalUlShow");
   vegeProducts.classList.remove("VegeUlShow");
   fruitsProducts.classList.remove("FruitUlShow");
@@ -286,6 +339,12 @@ addnitional.addEventListener("click", function () {
 });
 
 vege.addEventListener("click", function () {
+  LiVege.forEach((LiVegeOne) => (LiVegeOne.style.fontSize = "32px"));
+  LiChecked.forEach((LiCheckedOne) => (LiCheckedOne.style.fontSize = "0px"));
+  LiAddnitional.forEach(
+    (LiAddnitionalOne) => (LiAddnitionalOne.style.fontSize = "0px")
+  );
+  LiFruits.forEach((LiFruitsOne) => (LiFruitsOne.style.fontSize = "0px"));
   vegeProducts.classList.add("VegeUlShow");
   fruitsProducts.classList.remove("FruitUlShow");
   addnitionalProducts.classList.remove("AdnitionalUlShow");
@@ -295,6 +354,12 @@ vege.addEventListener("click", function () {
 });
 
 fruits.addEventListener("click", function () {
+  LiFruits.forEach((LiFruitsOne) => (LiFruitsOne.style.fontSize = "32px"));
+  LiChecked.forEach((LiCheckedOne) => (LiCheckedOne.style.fontSize = "0px"));
+  LiAddnitional.forEach(
+    (LiAddnitionalOne) => (LiAddnitionalOne.style.fontSize = "0px")
+  );
+  LiVege.forEach((LiVegeOne) => (LiVegeOne.style.fontSize = "0px"));
   fruitsProducts.classList.add("FruitUlShow");
   vegeProducts.classList.remove("VegeUlShow");
   addnitionalProducts.classList.remove("AdnitionalUlShow");
@@ -303,6 +368,12 @@ fruits.addEventListener("click", function () {
 });
 
 closeBtn.addEventListener("click", function () {
+  LiChecked.forEach((LiCheckedOne) => (LiCheckedOne.style.fontSize = "0px"));
+  LiAddnitional.forEach(
+    (LiAddnitionalOne) => (LiAddnitionalOne.style.fontSize = "0px")
+  );
+  LiVege.forEach((LiVegeOne) => (LiVegeOne.style.fontSize = "0px"));
+  LiFruits.forEach((LiFruitsOne) => (LiFruitsOne.style.fontSize = "0px"));
   vegeProducts.classList.remove("VegeUlShow");
   addnitionalProducts.classList.remove("AdnitionalUlShow");
   checkedProducts.classList.remove("CheckedUlShow");

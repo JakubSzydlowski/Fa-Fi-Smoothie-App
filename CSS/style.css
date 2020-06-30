@@ -204,11 +204,142 @@ section.choiceApp {
   right: -100%;
   transition: 1s;
 }
-
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 section.payAndDelivery {
-  display: none;
+  /* display: none; */
+  bottom: -100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(196, 235, 228, 0.932);
+  z-index: 3;
+  transition: 1s;
+  min-width: 1320px;
+}
+.pay {
+  width: 38%;
+  height: 80%;
+  background-color: rgb(190, 252, 240);
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+}
+.pay h2 {
+  margin-top: 3%;
+  flex-basis: 8%;
+  background-color: rgb(190, 252, 240);
+  font-size: 38px;
+  text-align: center;
+}
+.pay .bankGraphic {
+  margin-top: 1%;
+  background-image: url(/graphics/banks.jpg);
+  flex-basis: 68%;
+  background-size: 155%;
+}
+.pay .yourTotalAmound {
+  margin-top: 1%;
+  flex-basis: 7%;
+  background-color: rgba(95, 158, 160, 0.288);
+  font-size: 32px;
+  text-align: center;
+}
+.pay .paying {
+  flex-basis: 10%;
+  background-color: cadetblue;
+  transition: 0.3s;
+  margin-top: 2%;
+  font-size: 40px;
+  text-align: center;
+  padding: 1%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.delivery {
+  width: 38%;
+  height: 80%;
+  background-color: rgb(190, 252, 240);
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  display: flex;
+  flex-direction: column;
+}
+.delivery h2 {
+  margin-top: 3%;
+  flex-basis: 8%;
+  background-color: rgb(190, 252, 240);
+  font-size: 38px;
+  text-align: center;
+}
+.delivery .droneGraphic {
+  margin-top: 1%;
+  background-image: url(/graphics/drone.jpg);
+  flex-basis: 68%;
+  background-size: cover;
+  background-position: center;
+  opacity: 70%;
+  position: relative;
 }
 
+.delivery .deliveryInstruction {
+  position: absolute;
+  font-size: 26px;
+  color: #ffffff;
+  top: 15%;
+}
+.delivery .deliveryInstruction p:nth-child(1) {
+  font-size: 42px;
+  text-align: center;
+  margin-top: 0;
+}
+.delivery .deliveryInstruction p:last-child {
+  text-align: center;
+}
+.delivery .deliveryInstruction p {
+  font-size: 24px;
+  margin-left: 22px;
+  margin-top: 15px;
+  background-color: rgba(0, 0, 0, 0.123);
+}
+.delivery .deliveryCode {
+  margin-top: 1%;
+  flex-basis: 7%;
+  background-color: rgba(95, 158, 160, 0.288);
+  font-size: 32px;
+  text-align: center;
+}
+.delivery .droneStart {
+  flex-basis: 10%;
+  background-color: cadetblue;
+  margin-top: 2%;
+  font-size: 40px;
+  text-align: center;
+  padding: 1%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.coverLastInfo {
+  width: 50%;
+  height: 40%;
+  position: absolute;
+  top: 50%;
+  left: 150%;
+  transition: 0.5s;
+  background-color: rgb(190, 252, 240);
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  border-radius: 2%;
+}
+.coverLastInfo p {
+  font-size: 42px;
+  text-align: center;
+  padding: 5%;
+  margin-top: 3%;
+}
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 .choiceApp header {
   height: 20vh;
 }
@@ -272,11 +403,11 @@ section.payAndDelivery {
   position: relative;
   width: 100%;
   margin-left: 1%;
-
   border-bottom: solid 1px rgb(255, 255, 255);
   font-weight: lighter;
   color: #3d3d3cf1;
-  font-size: 32px;
+  font-size: 0px;
+  transition: 0.5s 0.5s;
 }
 .UlFruits li:nth-child(1) {
   height: 5%;
@@ -292,7 +423,7 @@ section.payAndDelivery {
   list-style: none;
   overflow: hidden;
   flex-direction: column;
-  font-size: 1px;
+
   border-radius: 2%;
 }
 .FruitUlShow {
@@ -356,7 +487,8 @@ div.minus {
   border-bottom: solid 1px rgb(255, 255, 255);
   font-weight: lighter;
   color: #3d3d3cf1;
-  font-size: 32px;
+  font-size: 0px;
+  transition: 0.5s 0.5s;
 }
 .UlVege li:nth-child(1) {
   height: 5%;
@@ -419,7 +551,8 @@ div.minus {
   border-bottom: solid 1px rgb(255, 255, 255);
   font-weight: lighter;
   color: #3d3d3cf1;
-  font-size: 32px;
+  font-size: 0px;
+  transition: 0.5s 0.5s;
 }
 .UlAddnitional li:nth-child(1) {
   height: 5%;
@@ -447,7 +580,7 @@ div.minus {
   list-style: none;
   overflow: hidden;
   flex-direction: column;
-  font-size: 32px;
+
   border-radius: 2%;
 }
 
@@ -459,7 +592,8 @@ div.minus {
   border: solid 2px rgb(255, 255, 255);
   font-weight: lighter;
   color: #3d3d3cf1;
-  font-size: 32px;
+  font-size: 0px;
+  transition: 0.5s 0.5s;
 }
 .UlChecked li:nth-child(1) {
   height: 5%;
@@ -571,13 +705,13 @@ div.minus {
   position: absolute;
   height: 100px;
   width: 100px;
-  font-size: 32px;
-  bottom: 45.5%;
+  font-size: 25px;
+  bottom: 45%;
   list-style: none;
   left: 360px;
 }
 .productsList li {
-  margin-top: 2px;
+  margin-top: 4px;
   height: 50px;
 }
 @media (max-width: 1600px) {
@@ -593,7 +727,7 @@ div.minus {
 .smoothieList {
   width: 350px;
   height: 70%;
-  background-color: rgba(243, 247, 3, 0.918);
+  background-color: rgba(222, 248, 196, 0.884);
   position: absolute;
   right: 0;
   display: flex;
@@ -618,7 +752,7 @@ div.minus {
   width: 85%;
   font-size: 30px;
   left: -110%;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 .smoothieListOrder li span {
   position: absolute;
@@ -632,7 +766,7 @@ div.minus {
   background-repeat: no-repeat;
 }
 .smoothieListOrder ul p {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.986);
   font-size: 14px;
   position: relative;
   width: 100%;

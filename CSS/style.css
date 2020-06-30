@@ -216,13 +216,14 @@ section.payAndDelivery {
   width: 90%;
   margin: auto;
   line-height: 20vh;
-  background-color: #ffcd584d;
+  color: rgba(255, 255, 255, 0);
   text-align: center;
   font-size: 60px;
   background-image: url(/graphics/smufi.jpg);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 2%;
 }
 
 .choicer {
@@ -242,7 +243,7 @@ section.payAndDelivery {
 }
 .choicer div.choiceOne {
   height: 20%;
-  background-color: #bbe844;
+
   min-width: 100px;
   transition: 0.3s;
   cursor: pointer;
@@ -252,6 +253,8 @@ section.payAndDelivery {
   text-align: center;
   margin-top: 45px;
   font-size: 32px;
+  background-color: rgba(20, 20, 19, 0.116);
+  color: #f1f5e7;
 }
 
 .fruits {
@@ -268,8 +271,12 @@ section.payAndDelivery {
   height: 7%;
   position: relative;
   width: 100%;
-  font-size: 42px;
+  margin-left: 1%;
+
   border-bottom: solid 1px rgb(255, 255, 255);
+  font-weight: lighter;
+  color: #3d3d3cf1;
+  font-size: 32px;
 }
 .UlFruits li:nth-child(1) {
   height: 5%;
@@ -280,12 +287,13 @@ section.payAndDelivery {
   position: absolute;
   top: 22%;
   left: 21%;
-  background-color: #f3e66f;
+  background-color: #fceab9;
   transition: 0.3s;
   list-style: none;
   overflow: hidden;
   flex-direction: column;
   font-size: 1px;
+  border-radius: 2%;
 }
 .FruitUlShow {
   /* transition: width 0.5s ease-out 0.2s; */
@@ -344,8 +352,11 @@ div.minus {
   height: 7%;
   position: relative;
   width: 100%;
-  font-size: 42px;
+
   border-bottom: solid 1px rgb(255, 255, 255);
+  font-weight: lighter;
+  color: #3d3d3cf1;
+  font-size: 32px;
 }
 .UlVege li:nth-child(1) {
   height: 5%;
@@ -358,8 +369,9 @@ div.minus {
   top: 22%;
   color: rgb(0, 0, 0);
   display: block;
-  background-color: rgb(179, 209, 151);
+  background-color: #e1fac0;
   cursor: default;
+  border-radius: 2%;
 }
 .vege {
   background-image: url(/graphics/vege.jpg);
@@ -395,14 +407,19 @@ div.minus {
   color: rgb(0, 0, 0);
   display: block;
   cursor: default;
+  background-color: #faf6d2;
+  border-radius: 2%;
 }
 
 .UlAddnitional li {
   height: 7%;
   position: relative;
   width: 100%;
-  font-size: 42px;
+
   border-bottom: solid 1px rgb(255, 255, 255);
+  font-weight: lighter;
+  color: #3d3d3cf1;
+  font-size: 32px;
 }
 .UlAddnitional li:nth-child(1) {
   height: 5%;
@@ -424,21 +441,25 @@ div.minus {
   position: absolute;
   top: 78.21%;
   left: 21%;
-  background-color: rgb(242, 226, 255);
+  background-color: rgb(247, 238, 255);
   transition: 0.3s;
   color: rgba(0, 0, 0, 0);
   list-style: none;
   overflow: hidden;
   flex-direction: column;
   font-size: 32px;
+  border-radius: 2%;
 }
 
 .UlChecked li {
   height: 7%;
   position: relative;
   width: 100%;
-  font-size: 42px;
+
   border: solid 2px rgb(255, 255, 255);
+  font-weight: lighter;
+  color: #3d3d3cf1;
+  font-size: 32px;
 }
 .UlChecked li:nth-child(1) {
   height: 5%;
@@ -467,16 +488,18 @@ div.minus {
   width: 48%;
   height: 73vh;
   position: absolute;
-  background-color: rgb(198, 238, 219);
+  background-color: rgba(176, 226, 160, 0.473);
   left: 47%;
   top: 22%;
   overflow: hidden;
+  border-radius: 2%;
 }
 
 .yourSmothie h2 {
   height: 10%;
   font-size: 46px;
   text-align: center;
+  color: #2d3026;
 }
 .cap {
   top: 15%;
@@ -494,7 +517,7 @@ div.minus {
 }
 .inside {
   position: absolute;
-  background-color: rgba(233, 221, 156, 0.747);
+  background-color: rgba(245, 235, 182, 0.685);
   top: 40%;
   left: 91px;
   width: 169px;
@@ -542,7 +565,7 @@ div.minus {
 }
 .productsAdded {
   height: 70%;
-  background-color: rgba(147, 243, 243, 0.925);
+  background-color: rgba(251, 255, 0, 0);
 }
 .productsList {
   position: absolute;
@@ -570,25 +593,32 @@ div.minus {
 .smoothieList {
   width: 350px;
   height: 70%;
-  background-color: rgba(222, 248, 196, 0.884);
+  background-color: rgba(243, 247, 3, 0.918);
   position: absolute;
   right: 0;
   display: flex;
   flex-direction: column;
+  border: 2px solid white;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .smoothieListOrder li {
   list-style: none;
-  font-size: 30px;
-  background-color: rgb(231, 223, 223);
+  font-size: 25px;
+  background-color: rgba(248, 245, 245, 0.397);
   width: 100%;
   flex-basis: 10%;
   position: relative;
+  left: -110%;
+  transition: 0.3s;
 }
-.smoothieListOrder li p {
+.smoothieListOrder li + p {
   position: absolute;
   width: 85%;
   font-size: 30px;
+  left: -110%;
+  transition: 0.3s;
 }
 .smoothieListOrder li span {
   position: absolute;
@@ -596,22 +626,23 @@ div.minus {
   width: 15%;
   top: 0;
   background-image: url(/graphics/minus.png);
-  background-color: #f3e66f;
+  cursor: pointer;
   height: 100%;
   background-size: contain;
   background-repeat: no-repeat;
 }
 .smoothieListOrder ul p {
-  background-color: rgba(224, 230, 231, 0.027);
+  background-color: rgba(255, 255, 255, 0.5);
   font-size: 14px;
   position: relative;
   width: 100%;
   flex-basis: 10%;
 }
 .smoothieList h3 {
-  font-size: 35px;
+  font-size: 25px;
+  text-align: center;
   padding: 3%;
-  background-color: rgb(240, 255, 220);
+  background-color: rgba(187, 190, 11, 0.144);
 }
 @media (max-width: 1720px) {
   .smoothieList {
@@ -644,33 +675,52 @@ div.minus {
   position: absolute;
   left: 50%;
   top: 85%;
-  border-radius: 5%;
-  background-color: rgba(235, 233, 154, 0.842);
+  border: none;
+  background-color: rgba(235, 235, 229, 0.842);
+
   font-size: 34px;
-  transition: 0.5s;
+  transition: 0.3s;
   outline: 0;
   cursor: pointer;
+  border-radius: 5%;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+.OrderAndPay:hover {
+  border: 2px solid black;
+  color: #000000;
+}
+.OrderAndPay div {
+  width: 120%;
+  height: 100%;
+  background-color: rgb(247, 247, 245);
+  transform: rotate(90deg);
+  position: absolute;
+  bottom: 160%;
+  left: 60%;
+  transition: 0.3s;
+  background-image: url(/graphics/credit-card.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 @media (max-width: 1720px) {
   .OrderAndPay {
     width: 35%;
     left: 55%;
-    background-color: rgba(235, 233, 154, 0.842);
+
     font-size: 28px;
   }
   @media (max-width: 1360px) {
     .OrderAndPay {
       width: 30%;
       left: 60%;
-      background-color: rgba(235, 233, 154, 0.842);
+
       font-size: 24px;
     }
   }
 }
-.OrderAndPay:hover {
-  color: whitesmoke;
-  border: 2px solid white;
-}
+
 button.AddToBasket {
   position: absolute;
   width: 100px;
@@ -682,12 +732,19 @@ button.AddToBasket {
   transition: 0.4s;
   outline: 0;
   cursor: pointer;
-  background-color: rgb(250, 252, 138);
+  background-color: rgb(254, 255, 189);
   z-index: 2;
+  background-image: url(/graphics/juice.png);
+  background-size: 10%;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 button.AddToBasket:hover {
-  border-radius: 30% 0% 30% 30%;
-  border: solid 1px white;
+  background-image: url(/graphics/juice.png);
+  line-height: 100px;
+  background-size: 100%;
+  font-size: 100px;
+  color: rgba(78, 197, 41, 0.986);
 }
 @media (max-width: 1600px) {
   button.AddToBasket {
@@ -707,14 +764,19 @@ div.cover {
   top: 22%;
   left: 21%;
   z-index: -1;
-  font-size: 22px;
+  font-size: 24px;
+  border-radius: 2%;
 }
 div.cover p:nth-child(1) {
+  text-align: center;
   font-size: 32px;
+  background-color: #bce84457;
+  border-radius: 2%;
 }
 div.cover p {
   font-weight: 500;
   margin: 20px;
+  color: rgb(61, 61, 61);
 }
 div.close {
   position: absolute;

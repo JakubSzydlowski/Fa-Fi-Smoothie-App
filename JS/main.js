@@ -39,11 +39,30 @@ const productsList = [...document.querySelectorAll(".productsList li")];
 
 const insideGrow = document.querySelector(".Smoothie .inside .insideUP");
 const tablicaMeserka = [];
+// Pay and order przycisk
+const PayAndOrderBtn = document.querySelector(".OrderAndPay");
+const CoverPayAndOrderBtn = document.querySelector(".OrderAndPay div");
 
+PayAndOrderBtn.addEventListener("mouseover", function () {
+  CoverPayAndOrderBtn.style.left = "0%";
+  CoverPayAndOrderBtn.style.bottom = "0%";
+  CoverPayAndOrderBtn.style.transform = "rotate(0deg)";
+  CoverPayAndOrderBtn.style.backgroundColor = "rgba(236, 236, 235, 0.999)";
+});
+PayAndOrderBtn.addEventListener("mouseout", function () {
+  CoverPayAndOrderBtn.style.left = "60%";
+  CoverPayAndOrderBtn.style.bottom = "160%";
+  CoverPayAndOrderBtn.style.transform = "rotate(90deg)";
+  CoverPayAndOrderBtn.style.backgroundColor = "rgba(78, 78, 76, 0.275)";
+});
+// Pay and order przycisk END
 // Dodawanie gotowych smoothie do koszyka
 const addToBasketBtn = document.querySelector(".yourSmothie .AddToBasket");
 const smoothieList = [
   ...document.querySelectorAll(".smoothieList .smoothieListOrder ul li p"),
+];
+const smoothieListSlide = [
+  ...document.querySelectorAll(".smoothieList .smoothieListOrder ul li"),
 ];
 const IconDeleteSmoothie = document.querySelector(
   ".smoothieList .smoothieListOrder ul li span"
@@ -51,53 +70,67 @@ const IconDeleteSmoothie = document.querySelector(
 const smoothieListProductsList = [
   ...document.querySelectorAll(".smoothieList .smoothieListOrder ul>p"),
 ];
-const deleteAddedSmoothie = [...document.querySelectorAll('.smoothieListOrder ul li span')];
+const deleteAddedSmoothie = [
+  ...document.querySelectorAll(".smoothieListOrder ul li span"),
+];
 let N = 0;
 let P;
 let PN = -1;
+let o = 0;
+const price = document.querySelector(".cena");
 
-deleteAddedSmoothie.forEach(deleteAddedSmoothieOne => deleteAddedSmoothieOne.addEventListener('click', function () {
-  P = this.dataset.option;
-  PN = Number(P);
-  smoothieListProductsList[PN - 1].textContent = "";
-  smoothieList[PN - 1].textContent = "";
-  if (N >= 0) {
-    if (smoothieList[0].textContent == "") {
-      N = 1
-    } else if (smoothieList[1].textContent == "") {
-      N = 2
-    } else if (smoothieList[2].textContent == "") {
-      N = 3
-    } else if (smoothieList[3].textContent == "") {
-      N = 4
-    } else if (smoothieList[4].textContent == "") {
-      N = 5
-    } else if (smoothieList[5].textContent == "") {
-      N = 6
+deleteAddedSmoothie.forEach((deleteAddedSmoothieOne) =>
+  deleteAddedSmoothieOne.addEventListener("click", function () {
+    P = this.dataset.option;
+    PN = Number(P);
+    smoothieListSlide[PN - 1].style.left = "-100%";
+    smoothieListProductsList[PN - 1].style.left = "-100%";
+    smoothieListProductsList[PN - 1].textContent = "";
+    smoothieList[PN - 1].textContent = "";
+
+    if (N >= 0) {
+      if (smoothieList[0].textContent == "") {
+        N = 1;
+      } else if (smoothieList[1].textContent == "") {
+        N = 2;
+      } else if (smoothieList[2].textContent == "") {
+        N = 3;
+      } else if (smoothieList[3].textContent == "") {
+        N = 4;
+      } else if (smoothieList[4].textContent == "") {
+        N = 5;
+      } else if (smoothieList[5].textContent == "") {
+        N = 6;
+      }
+    }
+    if (o >= 8) {
+      o = o - 8;
     }
 
-  }
-
-}))
-
-
+    price.textContent = o;
+  })
+);
+addToBasketBtn.addEventListener("mouseover", function () {
+  addToBasketBtn.textContent = "+";
+});
+addToBasketBtn.addEventListener("mouseout", function () {
+  addToBasketBtn.textContent = "Dodaj smoothie";
+});
 addToBasketBtn.addEventListener("click", function () {
-
   if (productsAdded.length == 5) {
-
     if (N <= 5) {
       if (smoothieList[0].textContent == "") {
-        N = 1
+        N = 1;
       } else if (smoothieList[1].textContent == "") {
-        N = 2
+        N = 2;
       } else if (smoothieList[2].textContent == "") {
-        N = 3
+        N = 3;
       } else if (smoothieList[3].textContent == "") {
-        N = 4
+        N = 4;
       } else if (smoothieList[4].textContent == "") {
-        N = 5
+        N = 5;
       } else if (smoothieList[5].textContent == "") {
-        N = 6
+        N = 6;
       }
 
       smoothieList[N - 1].textContent = "Smoothie " + N;
@@ -114,14 +147,14 @@ addToBasketBtn.addEventListener("click", function () {
         productsList[4].textContent;
 
       productsAdded.splice(0, 5);
-
-
+      smoothieListSlide[N - 1].style.left = "0";
+      smoothieListProductsList[N - 1].style.left = "0";
       for (a = 0, b = 4; a <= 4, b >= 0; a++, b--) {
         productsList[b].textContent = productsAdded[a];
 
-        productsAdded[0] ?
-          (insideGrow.style.top = "80%") :
-          (insideGrow.style.top = "100%");
+        productsAdded[0]
+          ? (insideGrow.style.top = "80%")
+          : (insideGrow.style.top = "100%");
         if (productsAdded[1]) {
           insideGrow.style.top = "60%";
         }
@@ -135,6 +168,8 @@ addToBasketBtn.addEventListener("click", function () {
           insideGrow.style.top = "0%";
         }
       }
+      o = o + 8;
+      price.textContent = o;
     } else {
       alert(
         "Z racji dostaw realizowanych przez drony, maksymalna ilość Smoothies w zamówieniu to 6 sztuk. Aby zamówić więcej niż 6 sztuk dokonaj zamówienia ponowanie."
@@ -159,15 +194,15 @@ plusProduct.forEach((plusProductOne) =>
       } else if (this.textContent.length <= 20) {
         productsAdded.push(this.textContent);
       } else {
-        alert('Aby dodać polecone smoothie- usuń obecnie dodane skłaniki!')
+        alert("Aby dodać polecone smoothie- usuń obecnie dodane skłaniki!");
       }
 
       for (a = 0, b = 4; a <= 4, b >= 0; a++, b--) {
         productsList[b].textContent = productsAdded[a];
 
-        productsAdded[0] ?
-          (insideGrow.style.top = "80%") :
-          (insideGrow.style.top = "100%");
+        productsAdded[0]
+          ? (insideGrow.style.top = "80%")
+          : (insideGrow.style.top = "100%");
         if (productsAdded[1]) {
           insideGrow.style.top = "60%";
         }
@@ -182,7 +217,7 @@ plusProduct.forEach((plusProductOne) =>
         }
       }
     } else {
-      alert('Dodałeś już maksymalną ilość składników na jedno Smoothie!')
+      alert("Dodałeś już maksymalną ilość składników na jedno Smoothie!");
     }
   })
 );
@@ -207,9 +242,9 @@ minusProduct.forEach((minusProductOne) =>
       for (a = 0, b = 4; a <= 4, b >= 0; a++, b--) {
         productsList[b].textContent = productsAdded[a];
       }
-      productsAdded[0] ?
-        (insideGrow.style.top = "80%") :
-        (insideGrow.style.top = "100%");
+      productsAdded[0]
+        ? (insideGrow.style.top = "80%")
+        : (insideGrow.style.top = "100%");
 
       if (productsAdded[1]) {
         insideGrow.style.top = "60%";

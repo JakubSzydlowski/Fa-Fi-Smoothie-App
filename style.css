@@ -1,0 +1,962 @@
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Jockey One", sans-serif;
+}
+
+body {
+  min-width: 1360px;
+  max-width: 1920px;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+div.startPanel {
+  background-image: url(/graphics/smoothie.jpg);
+  background-size: cover;
+  width: 100vw;
+  height: inherit;
+  position: relative;
+  transition: 0.5s;
+}
+
+.panel {
+  margin-left: -110%;
+}
+
+h2.text {
+  color: rgba(111, 145, 47, 0.705);
+  font-size: 9em;
+  position: absolute;
+  top: 5%;
+  text-align: center;
+  letter-spacing: 15px;
+  font-weight: 500;
+  background-color: rgba(233, 225, 225, 0.733);
+  width: 100%;
+}
+
+button.slideToApp {
+  position: absolute;
+  top: 70%;
+  left: 25%;
+  font-size: 4em;
+  font-weight: 500;
+  border: none;
+  background-color: rgba(206, 152, 152, 0.521);
+  width: 50vw;
+  height: 10vh;
+  border-radius: 2% 1%;
+  color: rgba(245, 245, 245, 0.781);
+  transition: 0.5s;
+  cursor: pointer;
+  outline: none;
+}
+
+button.slideToApp:hover {
+  background-color: rgba(206, 152, 152, 0.247);
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX start panel */
+.choiceCity {
+  right: -100%;
+  position: absolute;
+  top: 0;
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/graphics/tło1.jpg);
+  transition: 0.5s;
+  opacity: 90%;
+  font-size: 1.8em;
+}
+
+.city {
+  right: 0;
+}
+
+h2.choiceIt {
+  position: absolute;
+  top: 28%;
+  left: 20%;
+  font-size: 2.2em;
+}
+
+.cities {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  left: 10% !important;
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.choiceCity div {
+  position: absolute;
+  left: 20%;
+  font-size: 1.4em;
+  color: rgb(83, 83, 83);
+}
+
+.choiceCity div:nth-child(2) {
+  top: 38%;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.choiceCity div:nth-child(2):hover ~ .cities {
+  background-image: url(/graphics/warsaw.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 40%;
+  background-position: center;
+}
+
+.choiceCity div:nth-child(2):hover {
+  color: rgb(0, 0, 0);
+}
+
+.choiceCity div:nth-child(3) {
+  top: 43%;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.choiceCity div:nth-child(3):hover ~ .cities {
+  background-image: url(/graphics/wroclaw.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 40%;
+  background-position: center;
+}
+
+.choiceCity div:nth-child(3):hover {
+  color: rgb(0, 0, 0);
+}
+
+.choiceCity div:nth-child(4) {
+  top: 48%;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.choiceCity div:nth-child(4):hover ~ .cities {
+  background-image: url(/graphics/gdansk.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 40%;
+  background-position: center;
+}
+
+.choiceCity div:nth-child(4):hover {
+  color: rgb(0, 0, 0);
+}
+
+.choiceCity div:nth-child(5) {
+  top: 53%;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.choiceCity div:nth-child(5):hover ~ .cities {
+  background-image: url(/graphics/krakow.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 40%;
+  background-position: center;
+}
+
+.choiceCity div:nth-child(5):hover {
+  color: rgb(0, 0, 0);
+}
+
+.choiceCity div:nth-child(6) {
+  top: 58%;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.choiceCity div:nth-child(6):hover ~ .cities {
+  background-image: url(/graphics/poznan.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 40%;
+  background-position: center;
+}
+
+.choiceCity div:nth-child(6):hover {
+  color: rgb(0, 0, 0);
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX city panel */
+section.choiceApp {
+  min-width: 1360px;
+  max-width: 1920px;
+  width: 100%;
+
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  transition: 1s;
+}
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+section.payAndDelivery {
+  /* display: none; */
+  bottom: -100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(196, 235, 228, 0.932);
+  z-index: 3;
+  transition: 1s;
+  min-width: 1320px;
+}
+.pay {
+  width: 38%;
+  height: 80%;
+  background-color: rgb(190, 252, 240);
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+}
+.pay h2 {
+  margin-top: 3%;
+  flex-basis: 8%;
+  background-color: rgb(190, 252, 240);
+  font-size: 38px;
+  text-align: center;
+}
+.pay .bankGraphic {
+  margin-top: 1%;
+  background-image: url(/graphics/banks.jpg);
+  flex-basis: 68%;
+  background-size: 155%;
+}
+.pay .yourTotalAmound {
+  margin-top: 1%;
+  flex-basis: 7%;
+  background-color: rgba(95, 158, 160, 0.288);
+  font-size: 32px;
+  text-align: center;
+}
+.pay .paying {
+  flex-basis: 10%;
+  background-color: cadetblue;
+  transition: 0.3s;
+  margin-top: 2%;
+  font-size: 40px;
+  text-align: center;
+  padding: 1%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.pay .paying:hover {
+  background-color: rgba(95, 158, 160, 0.589);
+}
+.delivery {
+  width: 38%;
+  height: 80%;
+  background-color: rgb(190, 252, 240);
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  display: flex;
+  flex-direction: column;
+}
+.delivery h2 {
+  margin-top: 3%;
+  flex-basis: 8%;
+  background-color: rgb(190, 252, 240);
+  font-size: 38px;
+  text-align: center;
+}
+.delivery .droneGraphic {
+  margin-top: 1%;
+  background-image: url(/graphics/drone.jpg);
+  flex-basis: 68%;
+  background-size: cover;
+  background-position: center;
+  opacity: 70%;
+  position: relative;
+}
+
+.delivery .deliveryInstruction {
+  position: absolute;
+  font-size: 26px;
+  color: #ffffff;
+  top: 15%;
+}
+.delivery .deliveryInstruction p:nth-child(1) {
+  font-size: 42px;
+  text-align: center;
+  margin-top: 0;
+}
+.delivery .deliveryInstruction p:last-child {
+  text-align: center;
+}
+.delivery .deliveryInstruction p {
+  font-size: 24px;
+  margin-left: 22px;
+  margin-top: 15px;
+  background-color: rgba(0, 0, 0, 0.123);
+}
+.delivery .deliveryCode {
+  margin-top: 1%;
+  flex-basis: 7%;
+  background-color: rgba(95, 158, 160, 0.288);
+  font-size: 32px;
+  text-align: center;
+}
+.delivery .deliveryCode span {
+  font-size: 36px;
+}
+.delivery .droneStart {
+  flex-basis: 10%;
+  background-color: cadetblue;
+  margin-top: 2%;
+  font-size: 40px;
+  text-align: center;
+  padding: 1%;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.delivery .droneStart:hover {
+  background-color: rgba(95, 158, 160, 0.589);
+}
+.coverLastInfo {
+  width: 50%;
+  height: 40%;
+  position: absolute;
+  top: 50%;
+  left: 150%;
+  transition: 0.5s;
+  background-color: rgb(190, 252, 240);
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  border-radius: 2%;
+}
+.coverLastInfo p {
+  font-size: 42px;
+  text-align: center;
+  padding: 5%;
+  margin-top: 3%;
+}
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+.choiceApp header {
+  height: 20vh;
+}
+.title {
+  width: 90%;
+  margin: auto;
+  line-height: 20vh;
+  color: rgba(255, 255, 255, 0);
+  text-align: center;
+  font-size: 60px;
+  background-image: url(/graphics/smufi.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 2%;
+}
+
+.choicer {
+  width: 15%;
+  left: 5%;
+  margin-left: 5%;
+  height: 77vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.choiceOne:nth-child(3) p {
+  margin-top: 25px;
+}
+.choiceOne:nth-child(4) p {
+  margin-top: 25px;
+}
+.choicer div.choiceOne {
+  height: 20%;
+
+  min-width: 100px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.choiceOne p {
+  text-align: center;
+  margin-top: 45px;
+  font-size: 32px;
+  background-color: rgba(20, 20, 19, 0.123);
+  color: #f1f5e7;
+}
+
+.fruits {
+  background-image: url(/graphics/fruits.jpg);
+  background-size: 200%;
+  background-position: left;
+  border-radius: 5%;
+}
+.fruits:hover {
+  background-size: 220%;
+}
+
+.UlFruits li {
+  height: 7%;
+  position: relative;
+  width: 100%;
+  margin-left: 1%;
+  border-bottom: solid 1px rgb(255, 255, 255);
+  font-weight: lighter;
+  color: #3d3d3cf1;
+  font-size: 0px;
+  transition: 0.5s 0.5s;
+}
+.UlFruits li:nth-child(1) {
+  height: 5%;
+}
+.UlFruits {
+  width: 0%;
+  height: 15vh;
+  position: absolute;
+  top: 22%;
+  left: 21%;
+  background-color: #fceab9;
+  transition: 0.3s;
+  list-style: none;
+  overflow: hidden;
+  flex-direction: column;
+
+  border-radius: 2%;
+}
+.FruitUlShow {
+  /* transition: width 0.5s ease-out 0.2s; */
+  transition: height 0.6s ease-in-out 0.5s, width 0.5s ease-out,
+    color 1s ease-out 1s;
+  width: 25%;
+  height: 73vh;
+  font-size: 30px;
+  display: flex;
+  cursor: default;
+}
+
+div.plus {
+  cursor: pointer;
+  font-size: 0px;
+  color: rgba(0, 0, 0, 0);
+  width: 52px;
+  height: 100%;
+  position: absolute;
+  right: 52px;
+  background-color: rgba(255, 255, 0, 0);
+  top: 0;
+  background-image: url(/graphics/plus.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 0.3s;
+}
+div.plus:hover {
+  opacity: 80%;
+}
+div.minus {
+  cursor: pointer;
+  font-size: 0px;
+  color: rgba(0, 0, 0, 0);
+  width: 52px;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  background-color: rgba(255, 255, 0, 0);
+  top: 0;
+  background-image: url(/graphics/minus.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 0.3s;
+}
+div.minus:hover {
+  opacity: 80%;
+}
+/* XXXXXXXXXXXXXX wege  */
+.UlVege {
+  width: 0%;
+  height: 14.5vh;
+  position: absolute;
+  top: 41%;
+  left: 21%;
+  transition: 0.3s;
+  color: rgba(0, 0, 0, 0);
+  list-style: none;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.UlVege li {
+  height: 7%;
+  position: relative;
+  width: 100%;
+
+  border-bottom: solid 1px rgb(255, 255, 255);
+  font-weight: lighter;
+  color: #3d3d3cf1;
+  font-size: 0px;
+  transition: 0.5s 0.5s;
+}
+.UlVege li:nth-child(1) {
+  height: 5%;
+}
+.VegeUlShow {
+  transition: top 0.55s ease-in-out 0.5s, height 0.6s ease-in-out 0.5s,
+    width 0.5s ease-out, color 1s ease-out 1s;
+  width: 25%;
+  height: 73vh;
+  top: 22%;
+  color: rgb(0, 0, 0);
+  display: block;
+  background-color: #e1fac0;
+  cursor: default;
+  border-radius: 2%;
+}
+.vege {
+  background-image: url(/graphics/vege.jpg);
+  background-size: 120%;
+  background-position: bottom;
+  border-radius: 5%;
+}
+.vege:hover {
+  background-size: 135%;
+}
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  fruitsy */
+.UlAddnitional {
+  width: 0%;
+  height: 14.8vh;
+  position: absolute;
+  top: 59.43%;
+  left: 21%;
+  background-color: rgb(215, 216, 176);
+  transition: 0.3s;
+  color: rgba(0, 0, 0, 0);
+  list-style: none;
+  overflow: hidden;
+  flex-direction: column;
+  font-size: 32px;
+}
+
+.AdnitionalUlShow {
+  transition: top 0.55s ease-in-out 0.5s, height 0.6s ease-in-out 0.5s,
+    width 0.5s ease-out, color 1s ease-out 1s;
+  width: 25%;
+  height: 73vh;
+  top: 22%;
+  color: rgb(0, 0, 0);
+  display: block;
+  cursor: default;
+  background-color: #faf6d2;
+  border-radius: 2%;
+}
+
+.UlAddnitional li {
+  height: 7%;
+  position: relative;
+  width: 100%;
+
+  border-bottom: solid 1px rgb(255, 255, 255);
+  font-weight: lighter;
+  color: #3d3d3cf1;
+  font-size: 0px;
+  transition: 0.5s 0.5s;
+}
+.UlAddnitional li:nth-child(1) {
+  height: 5%;
+}
+.addnitional {
+  background-image: url(/graphics/addnitional.jpg);
+  background-position: center;
+  background-size: 100%;
+  border-radius: 5%;
+}
+.addnitional:hover {
+  background-size: 115%;
+}
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX adniszionale */
+
+.UlChecked {
+  width: 0%;
+  height: 14.8vh;
+  position: absolute;
+  top: 78.21%;
+  left: 21%;
+  background-color: rgb(247, 238, 255);
+  transition: 0.3s;
+  color: rgba(0, 0, 0, 0);
+  list-style: none;
+  overflow: hidden;
+  flex-direction: column;
+
+  border-radius: 2%;
+}
+
+.UlChecked li {
+  height: 7%;
+  position: relative;
+  width: 100%;
+
+  border: solid 2px rgb(255, 255, 255);
+  font-weight: lighter;
+  color: #3d3d3cf1;
+  font-size: 0px;
+  transition: 0.5s 0.5s;
+}
+.UlChecked li:nth-child(1) {
+  height: 5%;
+}
+.CheckedUlShow {
+  transition: top 0.5s ease-in-out 0.5s, height 0.5s ease-in-out 0.5s,
+    width 0.5s ease-out, color 1s ease-out 1s;
+  width: 25%;
+  height: 73vh;
+  top: 22%;
+  color: rgb(0, 0, 0);
+  display: block;
+  cursor: default;
+}
+.checked {
+  background-image: url(/graphics/checked.jpg);
+  background-position-y: 14%;
+  background-size: 100%;
+  border-radius: 5%;
+}
+.checked:hover {
+  background-size: 115%;
+}
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX sprawdzone */
+.yourSmothie {
+  width: 48%;
+  height: 73vh;
+  position: absolute;
+  background-color: rgba(176, 226, 160, 0.473);
+  left: 47%;
+  top: 22%;
+  overflow: hidden;
+  border-radius: 2%;
+}
+
+.yourSmothie h2 {
+  height: 10%;
+  font-size: 46px;
+  text-align: center;
+  color: #2d3026;
+}
+.cap {
+  top: 15%;
+  width: 70%;
+  min-width: 400px;
+  max-width: 200px;
+  height: 65%;
+  position: absolute;
+  background-image: url(/graphics/juice.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  overflow: hidden;
+  left: -5%;
+}
+.inside {
+  position: absolute;
+  background-color: rgba(245, 235, 182, 0.685);
+  top: 40%;
+  left: 91px;
+  width: 169px;
+  height: 260px;
+  /* border: 2px red solid; */
+  overflow: hidden;
+}
+@media (max-width: 1620px) {
+  .inside {
+    left: 101px;
+  }
+}
+@media (max-width: 1460px) {
+  .inside {
+    left: 105px;
+  }
+}
+.insideUP {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 138, 36);
+  background: linear-gradient(
+    63deg,
+    rgba(255, 138, 36, 1) 20%,
+    rgba(251, 255, 76, 1) 32%,
+    rgba(113, 195, 39, 1) 47%,
+    rgba(179, 28, 87, 1) 77%,
+    rgba(228, 119, 162, 1) 89%
+  );
+  transition: 0.5s;
+}
+
+.howMuchProducts li {
+  margin-top: 15px;
+}
+@media (max-width: 1360px) {
+  .howMuchProducts {
+    width: 60px;
+    font-size: 28px;
+    left: 5px;
+  }
+}
+.productsAdded {
+  height: 70%;
+  background-color: rgba(251, 255, 0, 0);
+}
+.productsList {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  font-size: 25px;
+  bottom: 45%;
+  list-style: none;
+  left: 360px;
+}
+.productsList li {
+  margin-top: 4px;
+  height: 50px;
+}
+@media (max-width: 1600px) {
+  .productsList {
+    left: 345px;
+  }
+}
+@media (max-width: 1550px) {
+  .productsList {
+    left: 300px;
+  }
+}
+.smoothieList {
+  width: 350px;
+  height: 70%;
+  background-color: rgba(222, 248, 196, 0.884);
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.smoothieListOrder li {
+  list-style: none;
+  font-size: 25px;
+  background-color: rgba(248, 245, 245, 0.397);
+  width: 100%;
+  flex-basis: 10%;
+  position: relative;
+  left: -110%;
+  transition: 0.3s;
+}
+.smoothieListOrder li + p {
+  position: absolute;
+  width: 85%;
+  font-size: 30px;
+  left: -110%;
+  transition: 0.5s;
+}
+.smoothieListOrder li span {
+  position: absolute;
+  right: 0%;
+  width: 15%;
+  top: 0;
+  background-image: url(/graphics/minus.png);
+  cursor: pointer;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.3s;
+}
+.smoothieListOrder li span:hover {
+  opacity: 80%;
+}
+.smoothieListOrder ul p {
+  background-color: rgba(255, 255, 255, 0.986);
+  font-size: 14px;
+  position: relative;
+  width: 100%;
+  flex-basis: 10%;
+}
+.smoothieList h3 {
+  font-size: 25px;
+  text-align: center;
+  padding: 3%;
+  background-color: rgba(187, 190, 11, 0.144);
+}
+@media (max-width: 1720px) {
+  .smoothieList {
+    width: 300px;
+    background-color: rgba(222, 248, 196, 0.884);
+  }
+}
+@media (max-width: 1550px) {
+  .smoothieList {
+    width: 230px;
+    background-color: rgba(222, 248, 196, 0.884);
+  }
+}
+.yourSmothie p {
+  position: absolute;
+  top: 85%;
+  height: 10%;
+  font-size: 42px;
+  width: 50%;
+  padding: 2%;
+}
+@media (max-width: 1560px) {
+  .yourSmothie p {
+    font-size: 32px;
+  }
+}
+.OrderAndPay {
+  height: 10%;
+  width: 40%;
+  position: absolute;
+  left: 50%;
+  top: 85%;
+  border: none;
+  background-color: rgba(235, 235, 229, 0.842);
+
+  font-size: 34px;
+  transition: 0.3s;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 5%;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+.OrderAndPay:hover {
+  border: 2px solid black;
+  color: #000000;
+}
+.OrderAndPay div {
+  width: 120%;
+  height: 100%;
+  background-color: rgb(247, 247, 245);
+  transform: rotate(90deg);
+  position: absolute;
+  bottom: 160%;
+  left: 60%;
+  transition: 0.3s;
+  background-image: url(/graphics/credit-card.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media (max-width: 1720px) {
+  .OrderAndPay {
+    width: 35%;
+    left: 55%;
+
+    font-size: 28px;
+  }
+  @media (max-width: 1360px) {
+    .OrderAndPay {
+      width: 30%;
+      left: 60%;
+
+      font-size: 24px;
+    }
+  }
+}
+
+button.AddToBasket {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  left: 40%;
+  border-radius: 30%;
+  font-size: 22px;
+  transition: 0.4s;
+  outline: 0;
+  cursor: pointer;
+  background-color: rgb(254, 255, 189);
+  z-index: 2;
+  background-image: url(/graphics/juice.png);
+  background-size: 10%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+button.AddToBasket:hover {
+  background-image: url(/graphics/juice.png);
+  line-height: 100px;
+  background-size: 100%;
+  font-size: 100px;
+  color: rgba(78, 197, 41, 0.986);
+}
+@media (max-width: 1600px) {
+  button.AddToBasket {
+    left: 45%;
+  }
+}
+@media (max-width: 1400px) {
+  button.AddToBasket {
+    left: 49%;
+  }
+}
+div.cover {
+  width: 25%;
+  height: 73vh;
+  background-color: rgba(176, 226, 160, 0.473);
+  position: absolute;
+  top: 22%;
+  left: 21%;
+  z-index: -1;
+  font-size: 24px;
+  border-radius: 2%;
+}
+div.cover p:nth-child(1) {
+  text-align: center;
+  font-size: 32px;
+  background-color: #bce84457;
+  border-radius: 2%;
+}
+div.cover p {
+  font-weight: 500;
+  margin: 20px;
+  color: rgb(61, 61, 61);
+}
+div.close {
+  position: absolute;
+  transition: 0.3s;
+  width: 0%;
+  height: 1%;
+  top: 22%;
+  left: 21%;
+  background-image: url(/graphics/close2.png);
+  background-repeat: no-repeat;
+  background-size: 1%;
+  background-position: center;
+}
+.closeShowed {
+  position: absolute;
+  transition: ease-out 0.3s 0.7s;
+  width: 3%;
+  height: 3.5%;
+  background-color: rgba(14, 153, 49, 0);
+  top: 22.1%;
+  left: 43.4%;
+  background-image: url(/graphics/close2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+}

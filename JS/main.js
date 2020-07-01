@@ -263,10 +263,16 @@ let priceTotal;
 const payingBtn = document.querySelector(".paying");
 const startDelivery = document.querySelector(".droneStart");
 const coverLastInfo = document.querySelector(".coverLastInfo");
+const deliveryCode = document.querySelector(".deliveryCode span");
 
 payingBtn.addEventListener("click", function () {
   payingBtn.textContent = "Zapłacone";
   payingBtn.style.backgroundColor = "rgb(188, 255, 149)";
+  if (startDelivery.textContent != "Wystartowane!") {
+    randomCode = Math.floor(Math.random() * 10000);
+    console.log(randomCode);
+    deliveryCode.textContent = randomCode;
+  }
 });
 startDelivery.addEventListener("click", function () {
   if (payingBtn.textContent == "Zapłacone") {

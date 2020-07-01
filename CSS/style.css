@@ -30,7 +30,7 @@ h2.text {
   color: rgba(111, 145, 47, 0.705);
   font-size: 9em;
   position: absolute;
-  top: 3%;
+  top: 5%;
   text-align: center;
   letter-spacing: 15px;
   font-weight: 500;
@@ -48,7 +48,7 @@ button.slideToApp {
   background-color: rgba(206, 152, 152, 0.521);
   width: 50vw;
   height: 10vh;
-  border-radius: 3%;
+  border-radius: 2% 1%;
   color: rgba(245, 245, 245, 0.781);
   transition: 0.5s;
   cursor: pointer;
@@ -71,7 +71,7 @@ button.slideToApp:hover {
   height: 100vh;
   background-image: url(/graphics/tło1.jpg);
   transition: 0.5s;
-  opacity: 99%;
+  opacity: 90%;
   font-size: 1.8em;
 }
 
@@ -257,6 +257,9 @@ section.payAndDelivery {
   box-sizing: border-box;
   cursor: pointer;
 }
+.pay .paying:hover {
+  background-color: rgba(95, 158, 160, 0.589);
+}
 .delivery {
   width: 38%;
   height: 80%;
@@ -311,6 +314,9 @@ section.payAndDelivery {
   font-size: 32px;
   text-align: center;
 }
+.delivery .deliveryCode span {
+  font-size: 36px;
+}
 .delivery .droneStart {
   flex-basis: 10%;
   background-color: cadetblue;
@@ -320,6 +326,10 @@ section.payAndDelivery {
   padding: 1%;
   box-sizing: border-box;
   cursor: pointer;
+  transition: 0.3s;
+}
+.delivery .droneStart:hover {
+  background-color: rgba(95, 158, 160, 0.589);
 }
 .coverLastInfo {
   width: 50%;
@@ -384,14 +394,14 @@ section.payAndDelivery {
   text-align: center;
   margin-top: 45px;
   font-size: 32px;
-  background-color: rgba(20, 20, 19, 0.116);
+  background-color: rgba(20, 20, 19, 0.123);
   color: #f1f5e7;
 }
 
 .fruits {
   background-image: url(/graphics/fruits.jpg);
   background-size: 200%;
-  background-position: center;
+  background-position: left;
   border-radius: 5%;
 }
 .fruits:hover {
@@ -450,6 +460,10 @@ div.plus {
   background-image: url(/graphics/plus.png);
   background-repeat: no-repeat;
   background-size: contain;
+  transition: 0.3s;
+}
+div.plus:hover {
+  opacity: 80%;
 }
 div.minus {
   cursor: pointer;
@@ -464,6 +478,10 @@ div.minus {
   background-image: url(/graphics/minus.png);
   background-repeat: no-repeat;
   background-size: contain;
+  transition: 0.3s;
+}
+div.minus:hover {
+  opacity: 80%;
 }
 /* XXXXXXXXXXXXXX wege  */
 .UlVege {
@@ -764,6 +782,10 @@ div.minus {
   height: 100%;
   background-size: contain;
   background-repeat: no-repeat;
+  transition: 0.3s;
+}
+.smoothieListOrder li span:hover {
+  opacity: 80%;
 }
 .smoothieListOrder ul p {
   background-color: rgba(255, 255, 255, 0.986);

@@ -11,6 +11,8 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+
+
 }
 
 div.startPanel {
@@ -197,8 +199,8 @@ section.choiceApp {
   min-width: 1360px;
   max-width: 1920px;
   width: 100%;
+  min-height: 610px;
 
-  height: 100%;
   position: absolute;
   top: 0;
   right: -100%;
@@ -392,23 +394,24 @@ section.payAndDelivery {
   width: 15%;
   left: 5%;
   margin-left: 5%;
-  height: 77vh;
+  height: 76vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
+/* 
 .choiceOne:nth-child(3) p {
-  margin-top: 25px;
+  margin-top: 0px;
 }
 
 .choiceOne:nth-child(4) p {
-  margin-top: 25px;
-}
+  margin-top: 20px;
+} */
 
 .choicer div.choiceOne {
   height: 20%;
-
+  min-height: 100px;
   min-width: 100px;
   transition: 0.3s;
   cursor: pointer;
@@ -451,7 +454,7 @@ section.payAndDelivery {
 
 .UlFruits {
   width: 0%;
-  height: 15vh;
+  height: 16vh;
   position: absolute;
   top: 22%;
   left: 21%;
@@ -470,6 +473,7 @@ section.payAndDelivery {
     color 1s ease-out 1s;
   width: 25%;
   height: 73vh;
+
   font-size: 30px;
   display: flex;
   cursor: default;
@@ -518,9 +522,9 @@ div.minus:hover {
 /* XXXXXXXXXXXXXX wege  */
 .UlVege {
   width: 0%;
-  height: 14.5vh;
+  height: 15vh;
   position: absolute;
-  top: 41%;
+  top: 42%;
   left: 21%;
   transition: 0.3s;
   color: rgba(0, 0, 0, 0);
@@ -550,6 +554,7 @@ div.minus:hover {
     width 0.5s ease-out, color 1s ease-out 1s;
   width: 25%;
   height: 73vh;
+
   top: 22%;
   color: rgb(0, 0, 0);
   display: block;
@@ -574,7 +579,7 @@ div.minus:hover {
   width: 0%;
   height: 14.8vh;
   position: absolute;
-  top: 59.43%;
+  top: 62%;
   left: 21%;
   background-color: rgb(215, 216, 176);
   transition: 0.3s;
@@ -590,6 +595,7 @@ div.minus:hover {
     width 0.5s ease-out, color 1s ease-out 1s;
   width: 25%;
   height: 73vh;
+
   top: 22%;
   color: rgb(0, 0, 0);
   display: block;
@@ -629,9 +635,9 @@ div.minus:hover {
 
 .UlChecked {
   width: 0%;
-  height: 14.8vh;
+  height: 16vh;
   position: absolute;
-  top: 78.21%;
+  top: 82%;
   left: 21%;
   background-color: rgb(247, 238, 255);
   transition: 0.3s;
@@ -664,6 +670,7 @@ div.minus:hover {
     width 0.5s ease-out, color 1s ease-out 1s;
   width: 25%;
   height: 73vh;
+
   top: 22%;
   color: rgb(0, 0, 0);
   display: block;
@@ -685,6 +692,7 @@ div.minus:hover {
 .yourSmothie {
   width: 48%;
   height: 73vh;
+  min-height: 610px;
   position: absolute;
   background-color: rgba(176, 226, 160, 0.473);
   left: 47%;
@@ -705,7 +713,7 @@ div.minus:hover {
   width: 70%;
   min-width: 400px;
   max-width: 200px;
-  height: 65%;
+  height: 440px;
   position: absolute;
   background-image: url(graphics/juice.png);
   background-repeat: no-repeat;
@@ -718,7 +726,7 @@ div.minus:hover {
 .inside {
   position: absolute;
   background-color: rgba(245, 235, 182, 0.685);
-  top: 40%;
+  top: 41%;
   left: 91px;
   width: 169px;
   height: 260px;
@@ -794,7 +802,7 @@ div.minus:hover {
 
 @media (max-width: 1550px) {
   .productsList {
-    left: 300px;
+    left: 320px;
   }
 }
 
@@ -989,6 +997,7 @@ button.AddToBasket:hover {
 div.cover {
   width: 25%;
   height: 73vh;
+  min-height: 610px;
   background-color: rgba(176, 226, 160, 0.473);
   position: absolute;
   top: 22%;
@@ -1029,6 +1038,7 @@ div.close {
   transition: ease-out 0.3s 0.7s;
   width: 3%;
   height: 3.5%;
+  min-height: 30px;
   background-color: rgba(14, 153, 49, 0);
   top: 22.1%;
   left: 43.4%;

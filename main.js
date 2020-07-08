@@ -136,9 +136,9 @@ addToBasketBtn.addEventListener("click", function () {
       for (a = 0, b = 4; a <= 4, b >= 0; a++, b--) {
         productsList[b].textContent = productsAdded[a];
 
-        productsAdded[0]
-          ? (insideGrow.style.top = "80%")
-          : (insideGrow.style.top = "100%");
+        productsAdded[0] ?
+          (insideGrow.style.top = "80%") :
+          (insideGrow.style.top = "100%");
         if (productsAdded[1]) {
           insideGrow.style.top = "60%";
         }
@@ -184,9 +184,9 @@ plusProduct.forEach((plusProductOne) =>
       for (a = 0, b = 4; a <= 4, b >= 0; a++, b--) {
         productsList[b].textContent = productsAdded[a];
 
-        productsAdded[0]
-          ? (insideGrow.style.top = "80%")
-          : (insideGrow.style.top = "100%");
+        productsAdded[0] ?
+          (insideGrow.style.top = "80%") :
+          (insideGrow.style.top = "100%");
         if (productsAdded[1]) {
           insideGrow.style.top = "60%";
         }
@@ -226,9 +226,9 @@ minusProduct.forEach((minusProductOne) =>
       for (a = 0, b = 4; a <= 4, b >= 0; a++, b--) {
         productsList[b].textContent = productsAdded[a];
       }
-      productsAdded[0]
-        ? (insideGrow.style.top = "80%")
-        : (insideGrow.style.top = "100%");
+      productsAdded[0] ?
+        (insideGrow.style.top = "80%") :
+        (insideGrow.style.top = "100%");
 
       if (productsAdded[1]) {
         insideGrow.style.top = "60%";
@@ -392,6 +392,8 @@ closeBtn.addEventListener("click", function () {
 btnLetsStart.addEventListener("click", function () {
   startPanel.classList.add("panel");
   choiceCityPanel.classList.add("city");
+  choiceApp.style.display = "block";
+
 });
 
 cities.forEach((city) =>

@@ -22,6 +22,7 @@ div.startPanel {
   height: inherit;
   position: relative;
   transition: 0.5s;
+  min-width: 1320px;
 }
 
 .panel {
@@ -200,10 +201,10 @@ section.choiceApp {
   max-width: 1920px;
   width: 100%;
   min-height: 610px;
-
+  display: none;
   position: absolute;
   top: 0;
-  right: -100%;
+  right: -1920px;
   transition: 1s;
 }
 
